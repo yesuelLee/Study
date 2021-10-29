@@ -1,7 +1,7 @@
 package Practice;
 
 	
-//백준 1차의배열의 첫번째 
+//백준 1차원 배열의 첫번째 
 public class PracticeArrOneMain {
 	public static void main(String[] args) {
 		PracticeArrOne praArr = new PracticeArrOne();
