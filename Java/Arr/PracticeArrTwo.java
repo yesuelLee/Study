@@ -6,7 +6,7 @@ public class PracticeArrTwo {
 
 	private Scanner sc ;
 	private int N,i,max,a;
-	
+	//백준)1차원 배열의 두번째 문제
 	
 	
 	public void run() {
