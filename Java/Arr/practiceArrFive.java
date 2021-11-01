@@ -13,7 +13,7 @@ public class practiceArrFive {
 		sc = new Scanner(System.in);
 		B=42;
 		int[] A=new int[10];
-		System.out.println("ÀÚ¿¬¼ö 10°³¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ìì—°ìˆ˜ 10ê°œë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		for(i=0;i<A.length;i++) {
 			A[i] =sc.nextInt()%B;
 //			if(i%B!=A[i]%B){
