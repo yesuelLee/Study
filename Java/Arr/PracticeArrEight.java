@@ -11,7 +11,7 @@ public class PracticeArrEight{
 	
 	public void run() {
 		sc = new Scanner(System.in);
-		System.out.println("테스트케이스 개수를 입력하세요.");
+		System.out.println("테스트케이스 갯수를 입력하세요.");
 		C=sc.nextInt();
 		
 			
