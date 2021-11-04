@@ -39,8 +39,6 @@ public class PracticeArrEight{
 				System.out.println("평균은"+aver);
 				
 				for(j=1;j<=N;j++) {
-					System.out.println("@@@@@@@aver"+aver);
-					System.out.println("@@@@@@@Score[j]"+Score[j]);
 					if(aver<Score[j]) {
 						count++;
 					}
