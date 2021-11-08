@@ -19,6 +19,7 @@ public class PracitceStringTwo{
 		        sc.close();
 		        
 		        for(int i=0; i<x; i++) {
+				//substring함수를 사용해서 인덱스 0부터 끝까지 받아서 "정수로만 이루어진 스트링"을 int 로 바꿔준다.
 		            result += Integer.parseInt(y.substring(i, i+1));
 		        }
 		        
