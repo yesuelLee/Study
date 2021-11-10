@@ -18,6 +18,7 @@ public class PracitceMathOne{
 			sc.close();
 			
 			int notebook = 1;
+			//Integer.MAX_VALUE= 2147483647 , Integer.MIN_VALUE= -2147483648
 			while(C*notebook<=A+(B*notebook)&&notebook<Integer.MAX_VALUE) {
 				notebook++;}
 			if(notebook==Integer.MAX_VALUE) {
