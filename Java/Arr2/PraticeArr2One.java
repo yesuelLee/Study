@@ -1,5 +1,4 @@
 package Practice;
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Scanner;
 // Arrays.sort(Arr) - 오름차순 정렬.
