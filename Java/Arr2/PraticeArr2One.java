@@ -1,8 +1,5 @@
 package Practice;
 import java.math.BigInteger;
-//새로 배운 내용
-//1.BigInteger : 문자열(사칙연산 안됨)
-//덧셈하려면 A+B는 ->A.add(B)); 처럼 사용해야 함.
 import java.util.Arrays;
 import java.util.Scanner;
 // Arrays.sort(Arr) - 오름차순 정렬.
