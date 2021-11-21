@@ -2,7 +2,7 @@ package Practice;
 import java.util.Arrays;
 import java.util.Scanner;
 // Arrays.sort(Arr) - 오름차순 정렬.
-
+// Arrays.sort(arr,Collections.reverseOrder());  - 내림차순
 public class PraticeArr2One{
 	private Scanner sc;
 	int N,i;
