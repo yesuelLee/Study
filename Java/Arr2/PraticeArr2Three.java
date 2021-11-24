@@ -2,6 +2,7 @@ package Practice;
 
 import java.util.ArrayList;
 //PracticeArr2Two 하고 다른점??
+//중복이 있음, 수가 더 큼
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
