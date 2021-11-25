@@ -1,7 +1,7 @@
 package Practice;
 
 import java.util.ArrayList;
-//새로 배운 내용
+//새로 배운 내용 정리
 //StringBuilder = 기존의 데이터에 더하는 방법, 긴 문자열을 더하는 상황이 발생 할 경우 적극 사용
 //StringBuilder에는 append()를 사용하여 문자열을 더하는 역할을 함.
 //사용법
