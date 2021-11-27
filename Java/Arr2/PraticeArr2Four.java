@@ -1,9 +1,9 @@
 package Practice;
 /*
 새로 배운 내용
-1.배열 2개 사용
+1. 배열 2개 사용
  String[][] Nrr =new String[N][2]; 
-2. 배열 오름차순
+2. 배열 2개 오름차순
 Arrays.sort(Nrr,new Comparator<String[]>() {
 	            @Override
 	            public int compare(String[] age, String[] name) {
