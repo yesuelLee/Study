@@ -1,5 +1,5 @@
 //새로 배운 것
-//1. String 값을 거꾸로 하기!
+//1. String 값을 숫자로 바꾼뒤 거꾸로 하기!
 // Integer.parseInt(strBuffer1.reverse().toString());
 
 //문제 요약: 두 수를 입력받은 후 그 수의 거꾸로 한 값에서 큰 수를 고르기.
