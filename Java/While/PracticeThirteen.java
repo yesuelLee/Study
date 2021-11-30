@@ -1,5 +1,5 @@
 package Practice;
-
+//숫자입력해서 while문 사용
 import java.util.Scanner;
 
 public class PracticeThirteen {
