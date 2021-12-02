@@ -1,4 +1,5 @@
 package Practice;
+//별찍기
 
 import java.util.Scanner;
 
