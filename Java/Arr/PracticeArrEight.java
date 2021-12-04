@@ -1,7 +1,7 @@
 package Practice;
 
 import java.util.Scanner;
-
+//평균 구하기
 public class PracticeArrEight{
 	private Scanner sc;
 	private int i,j;
