@@ -1,5 +1,5 @@
 package practice;
-
+//스캐너사용하여 값 입력받기
 import java.util.Scanner;
 
 public class PracticeTwo {
