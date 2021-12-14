@@ -13,19 +13,19 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class PraciticeFor2Eight{
-	int i,j,a,b,c;
+	int i,j,k;
 	public Scanner sc;
 	
 		
 		public void run(){
 			sc=new Scanner(System.in);
 			System.out.println("두 주사위의 합을 입력해주세요!");
-			a=sc.nextInt();
+			k=sc.nextInt();
 			
 			
 				for(i=1;i<=6;i++) {
 					for(j=1;j<=6;j++) {
-					if(i+j==a) {
+					if(i+j==k) {
 						System.out.println(i+" "+j);
 					}
 					}
