@@ -1,6 +1,6 @@
 /*
 love입력시 I Love you 출력하기!
-equals 비교 연산자
+equals사용  비교 연산자
 */
 
 
