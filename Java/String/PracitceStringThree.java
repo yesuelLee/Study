@@ -1,6 +1,6 @@
 package Practice;
 
-
+//String char 변환
 import java.util.Scanner;
 
 public class PracitceStringThree{
