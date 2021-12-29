@@ -4,6 +4,7 @@ package Practice;
 //str = 생성자, S = 입력받은 문자
 //2. hasMoreTokens() = 토큰의 갯수
 //3. nextToken = 토큰하나씩 꺼냄.
+//토큰 사용
 
 import java.util.Arrays;
 import java.util.Scanner;
