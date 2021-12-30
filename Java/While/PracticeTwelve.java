@@ -1,5 +1,5 @@
 package Practice;
-
+//while사용 별찍기
 import java.util.Scanner;
 
 public class PracticeTwelve {
