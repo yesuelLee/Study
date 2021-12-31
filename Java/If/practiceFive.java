@@ -1,6 +1,7 @@
 package Practice;
-
+//세자리수곱하기
 import java.util.Scanner;
+
 
 public class practiceFive {
 	public static void main(String[] args) {
