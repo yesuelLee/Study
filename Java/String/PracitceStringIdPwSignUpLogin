@@ -31,16 +31,16 @@ public class PraciticeStringIdLogin{
 		}
     
       		//로그인
-	        System.out.println("아이디를 입력해주세요.");
+	        System.out.println("로그인 할 아이디를 입력해주세요.");
 	        str2=sc.nextLine();
 	 	System.out.println("비밀번호를 입력해주세요.");
 	        pw2=sc.nextLine();
 
-	    	if(str2.equals("str")&&pw2.equals("pw)){
-	    	  System.out.println("welcome"+str+"님!");
+	    	if(str2.equals(str)&&pw2.equals(pw)){
+	    	  System.out.println("welcome "+str+"님!");
 
 	    	}else{
-		  System.out.println("아이디와 비밀번호를 확인해주세요.");
+	    	  System.out.println("아이디와 비밀번호를 확인해주세요.");
 	      	}
 
 		
@@ -50,7 +50,7 @@ public class PraciticeStringIdLogin{
 
 		
 		
-		
+}
 		
 
 /*
