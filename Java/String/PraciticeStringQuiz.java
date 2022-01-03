@@ -43,7 +43,7 @@ public class PraciticeStringQuiz{
    		System.out.println("폭력배가 가장 많은 나라는?");
    		three=sc.nextLine();
    		
-   		if(two.equals("칠레")) {
+   		if(three.equals("칠레")) {
 			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 3번째 문제 정답! ");
   		}else {
   			System.out.println("틀렸습니다. 더 생각해 보시지 (힌트:없음)");
@@ -52,7 +52,7 @@ public class PraciticeStringQuiz{
    		System.out.println("왕이 꿈틀대면??");
    		four=sc.nextLine();
    		
-   		if(two.equals("왕꿈틀이")) {
+   		if(four.equals("왕꿈틀이")) {
 			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 4번째 문제도 정답! ");
   		}else {
   			System.out.println("틀렸습니다. 더 생각해 보시지 (힌트:젤리)");
@@ -61,7 +61,7 @@ public class PraciticeStringQuiz{
    		System.out.println("치과의사가 좋아하는 아파트는??(한글로치세요.)");
    		five=sc.nextLine();
    		
-   		if(two.equals("이편한세상")) {
+   		if(five.equals("이편한세상")) {
 			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 정답! ");
   		}else {
   			System.out.println("틀렸습니다. 더 생각해 보시지 (힌트:아파트 이름)");
