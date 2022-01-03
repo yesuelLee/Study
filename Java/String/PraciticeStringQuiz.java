@@ -35,7 +35,7 @@ public class PraciticeStringQuiz{
    		two=sc.nextLine();
    		
    		if(two.equals("뽀송해")) {
-			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 2번째 문제도 정답! ");
+			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 2번째 문제 정답! ");
   		}else {
   			System.out.println("틀렸습니다. 더 생각해 보시지 (힌트:ㅇ송해) ");
 		}
@@ -44,7 +44,7 @@ public class PraciticeStringQuiz{
    		three=sc.nextLine();
    		
    		if(two.equals("칠레")) {
-			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 3번째 문제도 정답! ");
+			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 3번째 문제 정답! ");
   		}else {
   			System.out.println("틀렸습니다. 더 생각해 보시지 (힌트:없음)");
 		}
@@ -62,12 +62,12 @@ public class PraciticeStringQuiz{
    		five=sc.nextLine();
    		
    		if(two.equals("이편한세상")) {
-			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 모든 문제를 맞추셨습니다!!당신은 인싸중에 인싸 최고! ");
+			System.out.println("당신의 센스에 감탄하며 머리를 탁치고갑니다! 정답! ");
   		}else {
   			System.out.println("틀렸습니다. 더 생각해 보시지 (힌트:아파트 이름)");
 		}
    		
-   		System.out.println("당신은 넌센스 게임을 창작할 만큼의 센스가있습니다!");
+   		
 }
 		
 
