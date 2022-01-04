@@ -1,6 +1,5 @@
 /*
-ID,PW 입력해서 아이디 만든 후 로그인 하기!
-
+간단한 문제만들기 넌센스퀴즈
 */
 
 
@@ -18,7 +17,7 @@ public class PraciticeStringQuiz2{
 	public void run() {
 		sc = new Scanner(System.in);
 		
-		//회원가입
+		
 		System.out.println("1.왕이 궁에 들어가기 싫을 때 하는 말은??");
 		one=sc.nextLine();
     
