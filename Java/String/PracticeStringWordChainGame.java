@@ -1,6 +1,5 @@
 package Practice;
 /*
-
 끝말잇기 하기!
 */
 import java.util.Scanner;
