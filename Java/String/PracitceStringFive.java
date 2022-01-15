@@ -1,5 +1,5 @@
 package Practice;
-//다시해보기!
+//다시공부해보기!
 
 import java.util.Arrays;
 import java.util.Scanner;
