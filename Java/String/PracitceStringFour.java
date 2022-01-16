@@ -1,5 +1,5 @@
 package Practice;
-
+/*알파벳 입력*/
 
 import java.util.Scanner;
 
