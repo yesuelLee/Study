@@ -1,0 +1,267 @@
+[@Annotation]:주석
+- 주석처럼 사용, 특별한 의미/기능을 수행하도록하는 기술
+  -> 프로그램에게 추가적인 정보를 제공해주는 "메타데이터(데이터를 위한 데이터)"
+
+- 사용 순서
+  1) 어노테이션 정의
+  2) 클래스에 어노테이션 배치
+  3) 코드가 실행되는 중, Reflection 이용하여 추가 정보 획득, 기능 실시
+   *Reflection: 프로그램이 실행 중 자신의 구조와 동작 검사,조사,수정하는 것
+
+ - 종류
+  1) @ComponentScan
+    - @Component와 @Service, @Repository, @Controller, @Configuration이 붙은 
+       클래스 Bean들을 찾아서 Context에 bean등록을 해줌.
+  2) @ComPonent
+    - 개발자가 직접 작성한 Class를 Bean으로 등록하기 위해 사용.
+    - @Bean과 다르게 name이 아닌 value를 이용해서 Bean 이름 지정.
+  3) @Bean
+    - 개발자가 직접 제어가 불가능한 외부 라이브러리등을 Bean으로 만들 때 사용.
+    - ArrayList같은 라이브러리등을 Bean으로 등록하기 위해선, 별도로 해당 라이브러리객체
+      를 반환하는 Method를 만들고 @Bean 사용
+    - @Bean(name="name") 값을 이용하면 자신이 원하는 id로 Bean을 등록 가능.
+  4) @Autowired
+    - 속성(field), setter method, construction(생성자)에서 사용, Type에 따라 Bean을 
+      주입 함.
+    - 무조건적인 객체에 대한 의존성을 주입.
+    - 스프링이 자동적으로 값을 할당
+    - Controoler 클래스에서 DAO나 Service에 관한 객체 주입 시 많이 사용.
+    - 필드, 생성자, 입력 파라미터가 여러 개인 메소드에 적용 가능
+    - Type을 먼저 확인 후 못 찾으면 Name에 따라 주입
+      (Name으로 강제하는 방법: @Qualifier 같이 명시)
+    - Bean 주입 방식(3가지)
+      1) @Autowired
+      2) setter
+      3) 생성자 (@AllArgsConstructor 사용)->권장방식
+
+   5) @Inject
+    - @Autowired 와 비슷한 역할
+
+   6) @Controller
+    - 스프링의 Controller 의미, Spring MVC에서 Controller클래스에서 사용
+   
+   7) @RestController
+
+@Controller
+@RestController
+API와 view를 동시에 사용하는 경우에 사용
+view가 필요없는 API만 지원하는 서비스에서 사용
+API 서비스 사용하는 경우, @ResponseBody를 이용하여 객체를 반환 함.
+@RequestMapping 메서드가 기본적으로 @ResponseBody 의미를 가정
+view(화면) return이 주목적
+data(json, xml 등) return이 주목적
+
+Spring 4.0.1부터 제공
+    - Spring에서 Controller 중 View로 응답하지 않는, Controller를 의미
+    - method의 반환 결과를 JSON 형태로 반환
+    - @RestController 적혀있는 Controller의 method는 HttpResponse로 바로 응답 가능
+    - @ResponseBody 역할을 자동적으로 해줌
+    - @Controller + @ResponseBody 사용 시, @ResponseBody를 모든 메소드에서 적용
+
+   ※ @Controller와 @RestController 차이
+
+결국, @RestController = @Controller + @ResponseBody 이다.
+  
+  
+
+   8) @Service
+    - Service Class에서 사용
+    - 비즈니스 로직을 수행하는 Class라는 것을 나타내는 용도.
+   
+   9) @Repository
+    - DAO class에서 사용
+    - DataBase에서 접근하는 method가 있는 Class에서 사용
+   
+   10) @EnableAutoConfiguration
+    - Spring Application Context를 만들 때 자동으로 설정하는 기능을 켬
+    - classpath의 내용에 기반해서 자동으로 생성
+    - tomcat-embed-core.jar가 존재하면 톰캣 서버가 셋팅됨.
+
+
+  11) @Required
+    - setter method에 적용해주면 Bean 생성시 필수 프로퍼티 임을 알림
+    - Required Annotation을 사용하여 optional 하지 않은, 꼭 필요한 속성들을 정의
+    - 영향을 받는 bean property를 구성할 땐, XML 설정 파일에 반드시 property를 채워야 한다.
+      (그렇지 않으면 BeanIntializationException예외 발생)
+
+  12) @Qualifier("id123")
+    - @Autowired와 같이 쓰이며, 같은 타입의 Bean 객체가 있을 때 해당 아이디를 적어 원하는          Bean이 주입될 수 있도록 함
+      (같은 타입이 존재하는 경우 ex)동물=원숭이,개,고양이)
+    - 같은 타입의 Bean이 두 개 이상이 존재하는 경우, Spring이 어떤 Bean을 주입해야 할지 
+      알 수 없어서 Spring Container를 초기화하는 과정에서 예외를 발생시킴.
+      ->이 경우 @Qualifier을 @Autowired와 함께 사용하여 정확히 어떤 bean을 사용할지 지정하여          특정 의존 객체를 주입할 수 있도록 한다
+    - xml 설정에서 bean의 한정자 값(qualifier value)을 설정    - @Autowired 어노테이션이 적용된 주입 대상에 @Qualifier 어노테이션을 설정
+
+   13) @Resource
+    - @Autowired와 마찬가지로 Bean 객체를 주입해 줌, 
+     차이점은 Autowired는 타입으로 Resource는 이름으로 연결함.
+    - Spring Famework 2.5부터 지원 가능
+    - Annotation 사용으로 인해 특정 Framework에 종속적인 어플리케이션을 구성하지 않기 위해선
+      @Resource를 사용할 것을 권장
+    - @Resource를 사용하기 위해서는 class path 내에 jsr250-api.jar 파일을 추가해야 함.
+    - 필드, 입력 파라미터가 한 개인 bean property setter method에 적용 가능
+
+
+   14) @PostConstruct, @PreConstruct
+    - 의존하는 객체를 생성한 이후 초기화 작업을 위해 객체 생성 전/후에(pre/post) 실행해야 할 
+      method 앞에 붙임.
+
+   15) @PreDestroy
+    - 객체를 제거하기 전(pre)에 해야할 작업을 수행하기 위해 사용
+
+   16) @PropertySource
+    - 해당 프로퍼피 파일을 Environment로 로딩하게 해줌.
+    - 클래스에 @PropertySource("classpath:/settings.properties") 적고,
+      클래스내부에 @Resource를 Environment타입의 멤버 변수앞에 적으면 매핑 됨.
+   
+
+
+
+   17) ConfigurationProperties
+    - yaml파일을 읽음.
+    - default로 classpath:application.properties 파일이 조회 됨.
+    - 속성 클래스를 따로 만들어두고 그 위에 (prefix="mail")을 써서 프로퍼티의 접두사를 사용가능.
+  
+   18) @Lazy
+    - 지연 로딩을 지원.
+    - @Component, @Bean 과 같이 사용, Class가 로드될 때 스프링에서 바로 bean등록을 마치는
+      것이 아닌, 실제로 사용될 때 로딩이 이뤄지게 하는 방법
+
+   19) @Value
+    - properties에서 값을 가져와 적용할 때 사용.
+      ex) @Value("${value.from.file}")
+    - private String valueFromFile; 이라고 구성되어 있으면 value.from.file의 값을 가져와서
+      해당 변수에 주입해준다.
+    - spEL을 이용해서 조금 더 고급스럽게 사용 가능.
+      ex) @Value(#{systemProperties['priority']?:'some default'})
+
+   20) @SpringBootApplication
+    - @Configuration, @EnableAutoConfiguration, @ComponentScan 3가지를 하나로 합친 것
+
+   21) @RequestMapping 
+    - 요청 URL을 어떤 method가 처리할지 mapping 해줌.
+    - Controller나 Controller의 method에 적용
+    - 요청을 받는 형식인 GET, POST, PATCH, PUT, DELETE 를 정의하기도 함.
+    - 요청 받는 형식을 정의하지 않는다면, 자동적으로 GET으로 설정 됨.
+    - @RequestMapping에 대한 모든 매핑 정보는 Spring에서 제공하는 HandlerMapping Class가
+      가지고 있다.
+
+   22) @CookieValue
+    - 쿠키 값을 parameter로 전달 받을 수 있는 방법이다.
+    - 해당 쿠키가 존재하지 않으면 500 에러를 발생시킴
+    - 속성으로 required가 있는데 default는 true다.    - false를 적용하면 해당 쿠키 값이 없을 때 null로 받고 에러를 발생시키지 않음
+     ex) public String view(@CookieValue(value="auth")String auth){...};
+
+   23) @CrossOrigin
+    -  CORS 보안상의 문제로 브라우저에서 리소스를 현재 origin에서 다른 곳으로의 AJAX요청을 
+      방지하는 것
+    - @RequestMapping이 있는 곳에 사용하면 해당 요청은 타 도메인에서 온 ajax요청을 처리해 줌.
+     ex) @CrossOrigin(origins="http://abcd.naver.com", maxAge=3600)
+        ->기본 도메인이 http://abcd.naver.com인 곳에서 온 ajax요청만 받아주겠다.
+
+
+
+
+   24) @ModelAttribute
+    - view에서 전달해주는 parameter를 Class(VO/DTO)의 멤버 변수로 binding 해주는 것.
+    - binding 기준은 <input name="id" /> 처럼 어떤 태그의 name값이 해당 Class의 멤버 
+      변수명과 일치해야하고 setmethod명도 일치해야한다.
+
+   25) @GetMapping 
+    - @RequestMapping(Method=RequestMethod.GET)과 같음    - @PostMapping, @PutMapping, @PatchMapping, @DeleteMapping 등 도 있음
+
+   26) @SessionAttributes
+    - Session에 data를 넣을 때 사용
+    - @SessionAttributes("name")이라고 하면 Model에 key값이 "name"으로 있는 값은 자동으로 
+      세션에도 저장됨
+
+   27) @Valid
+    - 유효성 검증이 필요한 객체임을 지정.
+   
+   28) @InitBinder
+    - @Valid 애노테이션으로 유효성 검증이 필요하다고 한 객체를 가져오기전에 수행해야할 
+      method를 지정
+
+   29) @RequestAttribute
+    - Request에 설정되어 있는 속성 값을 가져올 수 있음.
+
+   30) @RequestBody
+    - 요청이 온 데이터(JSON이나 XML형식)를 바로 Class나 model로 매핑하기 위한 것.
+    - POST나 PUT, PATCH로 요청을 받을때에, 요청에서 넘어온 body 값들을 자바 타입으로 파싱해
+      준다.
+    - HTTP POST 요청에 대해 request body에 있는 request message에서 값을 얻어와 매핑    - RequestData를 바로 Model이나 클래스로 매핑
+    - JSON 이나 XML같은 데이터를 적절한 messageConverter로 읽을 때 사용하거나 
+      POJO 형태의 데이터 전체로 받는 경우에 사용한다.
+
+
+   31) @RequestHeader
+    - Request의 header값을 가져올 수 있다. 메소드의 파라미터에 사용한다.
+
+   32) @RequestParam
+    - @PathVariable과 비슷함.
+    - request의 parameter에서 가져오는 것.
+    - method의 파라미터에 사용.
+    - ?moviename=thepurge 와 같은 쿼리 파라미터를 파싱해줌.
+    - HTTP GET 요청에 대해 매칭되는 request parameter 값이 자동으로 들어감.    - url 뒤에 붙는 parameter 값을 가져올 때 사용한다.
+    - @RequestParam 어노테이션의 괄호 안의 문자열이 전달 인자 이름(실제 값을 표시)이다.
+   
+   33) @RequestPart
+    - Request로 온 MultipartFile을 바인딩해줌.
+     ex) @RequestPart("file") MultipartFile file
+
+
+
+
+
+   34) @ResponseBody
+    - HttpMessageConverter를 이용, JSON 혹은 xml 요청에 응답 할 수있게 해줌.
+    - view가 아닌 JSON형식의 값을 응답할 때 사용함.
+    - 문자열을 리턴하면 그 값을 http response header가 아닌 response body에 들어감.
+    - 이미 RestController Annotation이 붙어 있다면, 쓸 필요가 없다.    - 그렇지 않은 단순 컨트롤러라면, HttpResponse로 응답 할 수 있게 해준다.
+    - 만약 객체를 return하는 경우 JACKSON 라이브러리에 의해 문자열로 변환되어 전송된다.
+    - context에 설정된 viewResolver를 무시한다고 보면 됨.
+
+   35) @PathVariable
+    - method parameter 앞에 사용하면서 해당 URL에서 {특정값}을 변수로 받아 올 수 있음.
+    - HTTP 요청에 대해 매핑되는 request parameter 값이 자동으로 Binding 된다.
+    - uri에서 각 구분자에 들어오는 값을 처리해야 할 때 사용한다.
+    - REST API에서 값을 호출할 때 주로 많이 사용한다.
+
+   36) @ExceptionHandler(ExceptionClassName.class)
+    - 해당 클래스의 예외를 캐치하여 처리 함.
+  
+   37) @ControllerAdvice
+    - Class 위에 ControllerAdvice를 붙이고 어떤 예외를 잡아낼 것인지는 각 메소드 상단에 
+      @ExceptionHandler(예외클래스명.class)를 붙여서 기술한다.
+
+   38) @RestControolerAdvice
+       = @ControllerAdvice + @ResponseBody
+
+   39) @ResponseStatus
+      - 사용자에게 원하는 response code와 reason을 return해주는 Annotation이다.
+      - @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "my page URL 
+         changed..") => 예외처리 함수 앞에 사용한다.
+   
+   40) @EnableEurekaServer
+      - Eureka 서버로 만들어 줌.
+
+   41) @Transactional
+      - 데이터베이스 트랜잭션을 설정하고 싶은 method에 Annotation을 적용하면 method 내부에서 
+        일어나는 데이터베이스 로직이 전부 성공하게되거나 데이터베이스 접근중 하나라도 실패하면 
+        다시 롤백할 수 있게 해 줌.
+
+      - @Transaction(readOnly=true, rollbackFor=Exception.class)
+        : readOnly는 읽기전용임을 알리고 rollbackFor는 해당 Exception이 생기면 롤백하라는 뜻
+      - @Transaction(noRollbackFor=Exception.class)
+        : 해당 Exception이 나타나도 롤백하지 말라는 뜻
+      - @Transaction(timeout = 10)
+        : 10초안에 해당 로직을 수행하지 못하면 롤백하라는 뜻
+    
+      - 메소드 내에서 Exception이 발생하면 해당 메소드에서 이루어진 모든 DB 작업을 초기화 함.      - save 메소드를 통해서 10개를 등록해야 하는데 5번째에서 Exception이 발생하면 앞에 저장된 
+        4개 까지 모두 롤백
+      -> 이미 넣은걸 롤백시키는건 아니며, 모든 처리가 정상적으로 됐을때만 DB에 커밋하며 그렇지  
+         않은 경우엔 커밋하지 않는 것
+      - 비지니스 로직과 트랜잭션 관리는 대부분 Service에서 관리
+        따라서 일반적으로 DB 데이터를 등록/수정/삭제 하는 Service 메소드는 @Transactional를
+        필수적으로 가져간다.
+
