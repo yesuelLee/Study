@@ -8,7 +8,7 @@
   3) 코드가 실행되는 중, Reflection 이용하여 추가 정보 획득, 기능 실시
    *Reflection: 프로그램이 실행 중 자신의 구조와 동작 검사,조사,수정하는 것
 
- - 종류
+ - 종류 
   1) @ComponentScan
     - @Component와 @Service, @Repository, @Controller, @Configuration이 붙은 
        클래스 Bean들을 찾아서 Context에 bean등록을 해줌.
